@@ -312,6 +312,54 @@ var config = {
         }
     },
 
+    images: {
+
+        /*
+         |----------------------------------------------------------------
+         | Images Source Folder
+         |----------------------------------------------------------------
+         |
+         | This property declares the root folder for all source image
+         | files. Note that this is the folder name, not the path.
+         | We'll stick with a general "images" name - makes sense.
+         |
+         */
+
+        folder: 'images',
+
+        /*
+         |----------------------------------------------------------------
+         | Images Output Folder
+         |----------------------------------------------------------------
+         |
+         | Generally, your source files will be stored outside of your
+         | public directory, and then compiled/merged as necessary.
+         | This property represents the public specific folder.
+         |
+         */
+
+        outputFolder: 'images',
+
+        /*
+         |----------------------------------------------------------------
+         | Sass Compilation
+         |----------------------------------------------------------------
+         |
+         | Gone are the days of researching how to call Sass on a given
+         | folder. Simply run `mix.sass('file.scss')` and you're all
+         | set. This object sets the folder name and plugin opts.
+         |
+         */
+
+        imagemin: {
+            pluginOptions: {
+                progressive: true,
+                svgoPlugins: [{removeViewBox: false}],
+                use: [pngquant()]
+            }
+        },
+    },
+
     testing: {
 
         /*
